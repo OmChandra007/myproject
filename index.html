@@ -37,6 +37,36 @@
         recusandae amet architecto illum! Modi, quisquam expedita? Eius ut ea neque nostrum quisquam assumenda? Vitae,
         doloremque! Facilis beatae magnam voluptatum adipisci quia molestias explicabo assumenda impedit error
         repudiandae. Atque, modi! Nostrum expedita facilis dignissimos rerum, explicabo dolorem.</p>
+
+    <iframe width="560" height="415" src="https://www.youtube.com/embed/2MP5tJRvhCY" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+
+    <!-- Using Geolocation -->
+    <p>Click the button to get your coordinates.</p>
+
+    <button onclick="getLocation()">Try It</button>
+
+    <p id="demo"></p>
+
+    <script>
+        var x = document.getElementById("demo");
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+        }
+    </script>
+
 </body>
 
 </html>
